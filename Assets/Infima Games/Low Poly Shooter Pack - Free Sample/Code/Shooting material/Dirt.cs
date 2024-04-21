@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Dirt : MonoBehaviour, IHaveProjectileReaction
 {
+    public Transform[] dirtImpactPrefabs;
+    public Transform[] bloodImpactPrefabs;
     public void React()
     {
-        throw new System.NotImplementedException();
+        Instantiate(dirtImpactPrefabs[Random.Range
+                (0, bloodImpactPrefabs.Length)], transform.position,
+                Quaternion.LookRotation(gameObject.transform.position));
     }
 
 

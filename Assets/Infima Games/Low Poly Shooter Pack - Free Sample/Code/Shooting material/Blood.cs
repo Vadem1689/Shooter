@@ -9,9 +9,7 @@ public class Blood : MonoBehaviour,IHaveProjectileReaction
     {
         Instantiate(bloodImpactPrefabs[Random.Range
                 (0, bloodImpactPrefabs.Length)], transform.position,
-                Quaternion.LookRotation(gameObject.transform));
-        //Destroy bullet object
-        Destroy(gameObject);
+                Quaternion.LookRotation(gameObject.transform.position));
     }
 
     

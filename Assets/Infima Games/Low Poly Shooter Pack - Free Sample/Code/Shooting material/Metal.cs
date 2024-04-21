@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Metal : MonoBehaviour, IHaveProjectileReaction
 {
+    public Transform[] metalImpactPrefabs;
+    public Transform[] bloodImpactPrefabs;
     public void React()
     {
-        throw new System.NotImplementedException();
+        Instantiate(metalImpactPrefabs[Random.Range
+                 (0, bloodImpactPrefabs.Length)], transform.position,
+                 Quaternion.LookRotation(gameObject.transform.position));
     }
 
 
