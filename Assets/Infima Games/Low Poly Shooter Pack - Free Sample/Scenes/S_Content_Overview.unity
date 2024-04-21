@@ -4582,7 +4582,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f5fceb66b1e94d46a28292bd180ec68, type: 2}
+  - {fileID: 2100000, guid: 0f603e05847f6e247ac42200189f1e6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12614,7 +12614,7 @@ GameObject:
   - component: {fileID: 1373466747}
   - component: {fileID: 1373466746}
   m_Layer: 0
-  m_Name: Chest (2)
+  m_Name: Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12688,7 +12688,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f5fceb66b1e94d46a28292bd180ec68, type: 2}
+  - {fileID: 2100000, guid: 59d119d1ede274549993c7bd4d7f2097, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
