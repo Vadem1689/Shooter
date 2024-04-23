@@ -218,10 +218,10 @@ namespace InfimaGames.LowPolyShooterPack
 				}	
 			}
 
-			if (Input.GetKeyDown(KeyCode.Z))
-			{
-				logger.Logger.LogMovable(this);
-			}
+			//if (Input.GetKeyDown(KeyCode.Z))
+			//{
+			//	logger.Logger.LogMovable(this);
+			//}
 
 			//Update Animator.
 			UpdateAnimator();
@@ -261,7 +261,7 @@ namespace InfimaGames.LowPolyShooterPack
 		
 		public override bool IsTutorialTextVisible() => tutorialTextVisible;
 		
-		public override Vector2 GetInputMovement() => axisMovement;
+		//public override Vector2 GetInputMovement() => axisMovement;
 		public override Vector2 GetInputLook() => axisLook;
 
 		#endregion
