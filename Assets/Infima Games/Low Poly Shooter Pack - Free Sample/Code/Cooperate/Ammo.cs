@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour,IIntractable
 {
-    public void Interaction()
+    public void Interact()
     {
         Debug.Log("Ammo");
     }

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IMovable 
 {
-    string Name { get; set; }
-     void GetInputMovement();
+    string Name { get; }
+     Vector2 GetInputMovement();
 }

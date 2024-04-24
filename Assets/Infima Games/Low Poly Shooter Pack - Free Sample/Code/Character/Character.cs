@@ -12,7 +12,7 @@ namespace InfimaGames.LowPolyShooterPack
 	/// with basically every part of the asset, it is the hub where it all converges.
 	/// </summary>
 	[RequireComponent(typeof(CharacterKinematics))]
-	public sealed class Character : CharacterBehaviour
+	public sealed class Character : CharacterBehaviour,IMovable
 	{
 		#region FIELDS SERIALIZED
 		[SerializeField] private LoggerWrapper logger;
@@ -165,6 +165,9 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		private static readonly int HashMovement = Animator.StringToHash("Movement");
 
+		public string Name {  get => gameObject.name.ToString(); }
+
+
 		#endregion
 
 		#region UNITY
@@ -218,10 +221,10 @@ namespace InfimaGames.LowPolyShooterPack
 				}	
 			}
 
-			//if (Input.GetKeyDown(KeyCode.Z))
-			//{
-			//	logger.Logger.LogMovable(this);
-			//}
+			if (Input.GetKeyDown(KeyCode.Z))
+			{
+				logger.Logger.LogMovable(this);
+			}
 
 			//Update Animator.
 			UpdateAnimator();
@@ -260,8 +263,8 @@ namespace InfimaGames.LowPolyShooterPack
 		public override bool IsCursorLocked() => cursorLocked;
 		
 		public override bool IsTutorialTextVisible() => tutorialTextVisible;
-		
-		//public override Vector2 GetInputMovement() => axisMovement;
+
+		public override Vector2 GetInputMovement() => axisMovement;
 		public override Vector2 GetInputLook() => axisLook;
 
 		#endregion
@@ -849,6 +852,8 @@ namespace InfimaGames.LowPolyShooterPack
 			//Stop Holstering.
 			holstering = false;
 		}
+
+		
 
 		#endregion
 

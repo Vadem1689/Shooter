@@ -11,11 +11,11 @@ public class UnityLogger
 		Debug.Log(message);
 	}
 
-	public void LogMovable(Character character)
+	public void LogMovable(IMovable character)
 	{
 		Vector2 movement = character.GetInputMovement();
-		Log(character.name + " " + movement.ToString());
-		//character.FillAmmunition(5); // ya slomal charactera, haha
+		Log(character.Name + " " + movement.ToString());
+		/*character.FillAmmunition(5);*/ // ya slomal charactera, haha
 	}
 
 	public void LogCollection(IEnumerable collection)
@@ -32,7 +32,12 @@ public class LoggerWrapper : MonoBehaviour
 
     public UnityLogger Logger => logger;
 
-    private void Update()
+	private void Start()
+	{
+        logger = new UnityLogger();
+    }
+
+	private void Update()
 	{
         if (Input.GetKeyDown(KeyCode.Z))
         {

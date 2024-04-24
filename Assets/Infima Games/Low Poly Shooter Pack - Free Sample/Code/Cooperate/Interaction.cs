@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionWthObjects : MonoBehaviour
+public class Interaction : MonoBehaviour
 {
     [SerializeField] private float _interactDistance;
 
@@ -12,11 +12,11 @@ public class InteractionWthObjects : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GetNearest();
+            InteractWithNearest();
         }
     }
 
-    private void GetNearest()
+    private void InteractWithNearest()
     {
         Collider[] colliders = Physics.OverlapSphere
                 (transform.position, _interactDistance);
@@ -38,7 +38,7 @@ public class InteractionWthObjects : MonoBehaviour
         }
         if(nearestIntractable !=null)
         {
-            nearestIntractable.Interaction();
+            nearestIntractable.Interact();
         }
         
     }

@@ -24,7 +24,6 @@ public class Projectile : MonoBehaviour {
 
 	private void Start ()
 	{
-		print(gameObject.name);
 		//Grab the game mode service, we need it to access the player character!
 		var gameModeService = ServiceLocator.Current.Get<IGameModeService>();
 		//Ignore the main player character's collision. A little hacky, but it should work.
@@ -39,10 +38,9 @@ public class Projectile : MonoBehaviour {
 		if (collision.gameObject.GetComponent<Projectile>() != null)
 			return;
 
-        if (collision.gameObject.TryGetComponent<IHaveProjectileReaction>
-			(out IHaveProjectileReaction iHaveProjectileReaction))
+        if (collision.gameObject.TryGetComponent (out IHaveProjectileReaction reaction))
 		{
-            iHaveProjectileReaction.React();
+            reaction.React();
             Destroy(gameObject);
         }
 
@@ -59,10 +57,8 @@ public class Projectile : MonoBehaviour {
 
 	private IEnumerator DestroyTimer () 
 	{
-		//Wait random time based on min and max values
 		yield return new WaitForSeconds
 			(Random.Range(minDestroyTime, maxDestroyTime));
-		//Destroy bullet object
 		Destroy(gameObject);
 	}
 

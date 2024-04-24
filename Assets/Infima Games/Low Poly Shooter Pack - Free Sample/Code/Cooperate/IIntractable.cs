@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IIntractable
 {
-    public void Interaction();
+    public void Interact();
 }
